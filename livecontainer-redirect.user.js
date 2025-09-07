@@ -2,6 +2,8 @@
 // @name        LiveContainer redirect
 // @description Redirect iOS app schemes in Safari to LiveContainer
 // @match       *://*/*
+// @version     1.0.0
+// @updateURL   https://raw.githubusercontent.com/ilian/livecontainer-redirect-userscript/refs/heads/master/livecontainer-redirect.user.js
 // ==/UserScript==
 
 IGNORED_URL_SCHEMES = new Set([
