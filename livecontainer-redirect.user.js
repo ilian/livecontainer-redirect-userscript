@@ -2,7 +2,7 @@
 // @name        LiveContainer redirect
 // @description Redirect iOS app schemes in Safari to LiveContainer
 // @match       *://*/*
-// @version     1.0.0
+// @version     1.0.1
 // @updateURL   https://raw.githubusercontent.com/ilian/livecontainer-redirect-userscript/refs/heads/master/livecontainer-redirect.user.js
 // ==/UserScript==
 
@@ -99,9 +99,9 @@ function openUrlWithLiveContainer(url) {
 window.navigation.addEventListener("navigate", (e) => {
   const url = e.destination?.url;
   if (shouldInterceptRedirect(url)) {
+      e.preventDefault();
       console.log("Redirecting URL to LiveContainer", url);
       openUrlWithLiveContainer(url);
-      e.preventDefault();
   } else {
       console.warn("Ignoring redirect", url)
   }
